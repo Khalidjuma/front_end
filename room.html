@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: 'Poppins',sans-serif;
+        background-color: white;
+    }
+    h1, h2{
+        font-family: sans-serif;
+        font-weight: 400;
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    .flex{
+        display: flex;
+    }
+    .flex_space{
+        display: flex;
+        justify-content: space-between;
+    }
+    button{
+        border: none;
+        background: none;
+        outline: none;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .primary-btn{
+        padding: 15px 40px;
+        background: #7fc142;
+        font-weight: bold;
+        color: aliceblue;
+    }
+    .secondary-btn{
+        padding: 15px 40px;
+        background: none;
+        border: 2px solid white;
+        font-weight: bold;
+        color: white;
+    }
+    .container{
+        max-width: 85%;
+        margin: auto;
+    }
+    header{
+        height: 10vh;
+        line-height: 10pv;
+        padding: 0 20px;
+    }
+    header img{
+        margin: 20px 0;
+    }
+    header ul{
+        display: inline-block;
+    }
+    header ul li{
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    header ul li a{
+        color: black;
+        margin: 0 10px;
+        transition: 0.5s;
+    }
+    header ul li a:hover{
+
+         color: #7fc142;
+    }
+    header i{
+        margin: 0px 20px;
+
+    }
+    header button{
+        padding: 13px 40px;
+
+    }
+    header .navlinks span{
+        display: none;
+
+    }
+    @media only screen and (max-width:768px){
+        header{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #009f7f;
+            overflow: hidden;
+            transition: max-height 0.5s;
+            text-align: center;
+            z-index: 9;
+        }
+        header ul li{
+            display: block;
+        }
+        header ul li a{
+            color: aliceblue;
+        }
+        header i{
+            color: white;
+        }
+        header .navlinks span{
+            color: black;
+            display: block;
+            cursor: pointer;
+            line-height: 10vh;
+            font-size: 25px;
+        }
+    }
+    table{
+        width: 50%;
+        border: 1px solid cyan;
+        border-collapse: collapse;
+        margin-left: 70px;
+    }
+    th{
+        border: 1px solid cyan;
+        border-collapse: collapse;
+        padding:10px;
+        background-color: #7fc142;
+    }
+    td{
+        border: 1px solid cyan;
+        border-collapse: collapse;
+        padding: 2px;
+    }
+    .add{
+        text-align: center;
+      
+        
+    }
+</style>
+<body>
+    <header>
+        <div class="content flex_space">
+            <div class="logo">
+                <span class="pic"> <img src="picha/log2.png" alt="cofee" style="margin: top 20px; margin:button 20px; width: 130px; margin: right 800px;"> </span>
+            </div>
+            <div class="navlink">
+                <ul id="menulink">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="room.html">ROOMS</a></li>
+                    <li><a href="#pages">PAGES</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li> <i class="fa fa-search"></i> </li>
+                    <li> <button class="primary-btn">BOOK NOW</button></li>
+                    
+                </ul>
+                <span  class="fa fa-bars"></span>
+
+            </div>
+
+        </div>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="room">
+        <div class="container top">
+            <div class="heading" style="display: left;">
+                
+                <h2 style="display: flex;">Our Rooms</h2>
+                <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Nulla quibusdam 
+                    qui dolorum laudantium, magnam <br>debitis, incidunt voluptatum odio 
+                    reiciendis provident eligendi ducimus<br> laborum saepe earum omnis eaque harum 
+                    inventore. Aliquam.</p>
+            </div>
+            <div class=" content mtop">
+                <div class="items">
+                    <div class="image">
+                        <span class="pic"> <img src="picha/room3.jpg" alt="bu1" style="margin: top 10px; margin:button 5px; width: 1200px; "> </span>
+                    </div>
+                   <!-- <div class="text">
+                        <h2>Suport</h2>
+                        <div class="rate flex">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea impedit itaque, natus fugiat saepe 
+                            quam vitae amet fuga minima cum. Quos tenetur nesciunt atque repellendus quia. Cumque, placeat maxime!</p>-->
+                            <div class="button flex">
+                                <button class="primary-btn"> <a href="addroom.html"> BOOK NOW</a> </button>
+                                <h3>3000$ <span> <br> Per day</span></h3>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--- <section class="room">
+        <div class="container top">
+            <div class="heading" style="display: left;">
+                
+                <h2 style="display: flex;">Our Rooms</h2>
+                <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Nulla quibusdam 
+                    qui dolorum laudantium, magnam <br>debitis, incidunt voluptatum odio 
+                    reiciendis provident eligendi ducimus<br> laborum saepe earum omnis eaque harum 
+                    inventore. Aliquam.</p>
+            </div>
+            <div class=" content mtop">
+                <div class="items">
+                    <div class="image">
+                        <span class="pic"> <img src="picha/17.png" alt="bu1" style="margin: top 10px; margin:button 10px; width: 1200px; "> </span>
+                    </div>
+                    <div class="text">
+                        <h2>Suport</h2>
+                        <div class="rate flex">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea impedit itaque, natus fugiat saepe 
+                            quam vitae amet fuga minima cum. Quos tenetur nesciunt atque repellendus quia. Cumque, placeat maxime!</p>
+                            <div class="button flex">
+                                <button class="primary-btn">BOOK NOW</button>
+                                <h3>4000$ <span> <br> Per day</span></h3>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+   <section class="room">
+        <div class="container top">
+            <div class="heading" style="display: left;">
+                
+                <h2 style="display: flex;">Our Rooms</h2>
+                <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Nulla quibusdam 
+                    qui dolorum laudantium, magnam <br>debitis, incidunt voluptatum odio 
+                    reiciendis provident eligendi ducimus<br> laborum saepe earum omnis eaque harum 
+                    inventore. Aliquam.</p>
+            </div>
+            <div class=" content mtop">
+                <div class="items">
+                    <div class="image">
+                        <span class="pic"> <img src="picha/b3.jpg" alt="bu1" style="margin: top 10px; margin:button 10px; width: 1200px; "> </span>
+                    </div>
+                    <div class="text">
+                        <h2>Suport</h2>
+                        <div class="rate flex">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea impedit itaque, natus fugiat saepe 
+                            quam vitae amet fuga minima cum. Quos tenetur nesciunt atque repellendus quia. Cumque, placeat maxime!</p>
+                            <div class="button flex">
+                                <button class="primary-btn">BOOK NOW</button>
+                                <h3>5000$ <span> <br> Per day</span></h3>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>-->
+    <div class="add">
+        <div class="added">
+            <a href="addroom.html">ADD NEW ROOM</a>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TYPE</th>
+                <th>NAME</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="room">
+
+        </tbody>
+    </table>
+    <script>
+        fetch("http://localhost:8080/room/list").then((data)=>{
+            return data.json();
+        }).then((DATA)=>{
+            let info="";
+            DATA.forEach(iterm=>{
+                info+=`
+                <tr>
+                <td>${iterm.id}</td>
+                <td>${iterm. type}</td>
+                <td>${iterm.name}</td>
+                <td>
+                    <a href="editroom.html?id=${iterm.id}">EDIT</a>
+                    <br>
+                     <br /><a href="room.html?id=${iterm.id}">DELETE</a>
+                </td>
+                </tr>
+                `;
+            });
+            document.getElementById('room').innerHTML=info;
+        });
+
+
+        const urlParams=new URLSearchParams(window.location.search);
+        const roomid=urlParams.get('id');
+
+        fetch(`http://localhost:8080/room/delete/${roomid}`,{
+            method:'DELETE',
+            headers:{'Content-Type':'application/json'},
+            
+        })
+        .then(res=>{
+            if (res.ok){console.log("room deleted")
+        window.location.reload();
+        }
+        else{
+            console.log("room undeleted ")
+        }
+        return res
+        })
+        .then(res=>console.log(res))
+
+    </script>
+</body>
+</html>

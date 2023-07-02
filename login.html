@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    const loginForm=document.getElementById('loginForm');
+    loginForm.addEventListener('submit',(event)=>{
+      event.preventDefault();
+
+      const userName=document.getElementById('username');
+      const password=document.getElementById('password');
+
+      const usn=userName.value;
+      const pswd=password.value;
+
+      fetch(`http://localhost:8080/customer/list`)
+      .then(response =>response.json())
+      .then(data=>{
+        const matchingUser=data.find(user => user.username==usn && user.password==pswd);
+        if(matchingUser){
+          alert("login successfully");
+          window.location.href='home.html';
+        }else{
+          alert("invalid !!! check password or username");
+        }
+      })
+      .catch (error =>{
+        console.error('error',error);
+        alert('error login')
+      });
+
+    });
+  </script>
+</body>
+</html>

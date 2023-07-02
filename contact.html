@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: khaki;
+    }
+    .services{
+        position: relative;
+    }
+    .grid2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5px;
+    }
+    .services .left{
+        padding: 10px 0;
+    }
+    .services .box{
+       
+        text-align: center;
+        transition: 0.5s;
+        padding: 10px;
+    }
+    .services .box .text{
+        padding: 20px 0;
+        border:  #fff;
+    }
+    .services h3{
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10p;
+        transition: 0.5s;
+    }
+    body{
+        font-family: 'Poppins',sans-serif;
+        background-color: white;
+    }
+    h1, h2{
+        font-family: sans-serif;
+        font-weight: 400;
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    .flex{
+        display: flex;
+    }
+    .flex_space{
+        display: flex;
+        justify-content: space-between;
+    }
+    button{
+        border: none;
+        background: none;
+        outline: none;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .primary-btn{
+        padding: 15px 40px;
+        background: #7fc142;
+        font-weight: bold;
+        color: aliceblue;
+    }
+    .secondary-btn{
+        padding: 15px 40px;
+        background: none;
+        border: 2px solid white;
+        font-weight: bold;
+        color: white;
+    }
+    .container{
+        max-width: 85%;
+        margin: auto;
+    }
+    header{
+        height: 10vh;
+        line-height: 10pv;
+        padding: 0 20px;
+    }
+    header img{
+        margin: 20px 0;
+    }
+    header ul{
+        display: inline-block;
+    }
+    header ul li{
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    header ul li a{
+        color: black;
+        margin: 0 10px;
+        transition: 0.5s;
+    }
+    header ul li a:hover{
+
+         color: #7fc142;
+    }
+    header i{
+        margin: 0px 20px;
+
+    }
+    header button{
+        padding: 13px 40px;
+
+    }
+    header .navlinks span{
+        display: none;
+
+    }
+    @media only screen and (max-width:768px){
+        header{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #009f7f;
+            overflow: hidden;
+            transition: max-height 0.5s;
+            text-align: center;
+            z-index: 9;
+        }
+        header ul li{
+            display: block;
+        }
+        header ul li a{
+            color: aliceblue;
+        }
+        header i{
+            color: white;
+        }
+        header .navlinks span{
+            color: black;
+            display: block;
+            cursor: pointer;
+            line-height: 10vh;
+            font-size: 25px;
+        }
+    }
+</style>
+<body>
+    <header>
+        <div class="content flex_space">
+            <div class="logo">
+                <span class="pic"> <img src="picha/log2.png" alt="cofee" style="margin: top 20px; margin:button 20px; width: 130px; margin: right 800px;"> </span>
+            </div>
+            <div class="navlink">
+                <ul id="menulink">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="room.html">ROOMS</a></li>
+                    <li><a href="#pages">PAGES</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li> <i class="fa fa-search"></i> </li>
+                    <li> <button class="primary-btn">BOOK NOW</button></li>
+                    
+                </ul>
+                <span  class="fa fa-bars"></span>
+
+            </div>
+
+        </div>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="services top">
+        <div class="container">
+            <div class="heading">
+                <h2 style="text-align:center; font-size:28px;">Our  Services</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui 
+                    cupiditate vitae dolorum temporibus illo dolorem veniam voluptatum dolore<br />
+                     labore? Porro excepturi
+                     eveniet ad doloribus deserunt esse nihil ullam provident.</p>
+            </div>
+            <div class="content flex_space">
+                <div class="left grid2">
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/rest.png" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Delicius  Food</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/rest2.jpg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Fintness</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/diving.jpg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Fish Diving</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/sun.jpeg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 387px;"> </span>
+                            <h3>Sun set & sun rise</h3>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+</body>
+</html>

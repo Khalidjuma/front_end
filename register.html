@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+    
+</style>
+<body>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="firstName">firstName:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastname">lastName:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        const form=document.getElementById('registerForm');
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            let username=document.getElementById('username');
+            let firstName=document.getElementById('firstName');
+            let lastName=document.getElementById('lastName');
+            let password=document.getElementById('password');
+            const formdata=new FormData(form);
+            const customer=Object.fromEntries(formdata.entries());
+
+            fetch(`http://localhost:8080/customer/save`,{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify(customer)
+            })
+            .then(response=>response.json())
+            .then(data=>{
+                console.log('room edited',data);
+                window.location.href='login.html';
+                // kuonesha kma tyr
+                alert("add sucessefully done");
+
+            }).catch (error=>{
+                console.error('error edited by user',error);
+              });
+        });
+    </script>
+</body>
+</html>

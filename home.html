@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+     referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>-->
+
+</head>
+<style>
+    body{
+        font-family: 'Poppins',sans-serif;
+        background-color: white;
+    }
+    h1, h2{
+        font-family: sans-serif;
+        font-weight: 400;
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    .flex{
+        display: flex;
+    }
+    .flex_space{
+        display: flex;
+        justify-content: space-between;
+    }
+    button{
+        border: none;
+        background: none;
+        outline: none;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .primary-btn{
+        padding: 10px 35px;
+        background: #7fc142;
+        font-weight: bold;
+        color: aliceblue;
+    }
+    .secondary-btn{
+        padding: 10px 35px;
+        background: none;
+        border: 2px solid white;
+        font-weight: bold;
+        color: white;
+    }
+    .container{
+        max-width: 95%;
+        margin: auto;
+    }
+    header{
+        height: 10vh;
+        line-height: 10pv;
+        padding: 0 20px;
+    }
+    header img{
+        margin: 20px 0;
+    }
+    header ul{
+        display: inline-block;
+    }
+    header ul li{
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    header ul li a{
+        color: black;
+        margin: 0 10px;
+        transition: 0.5s;
+    }
+    header ul li a:hover{
+
+         color: #7fc142;
+    }
+    header i{
+        margin: 0px 20px;
+
+    }
+    header button{
+        padding: 13px 40px;
+
+    }
+    header .navlinks span{
+        display: none;
+
+    }
+    @media only screen and (max-width:768px){
+        header{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #009f7f;
+            overflow: hidden;
+            transition: max-height 0.5s;
+            text-align: center;
+            z-index: 9;
+        }
+        header ul li{
+            display: block;
+        }
+        header ul li a{
+            color: aliceblue;
+        }
+        header i{
+            color: white;
+        }
+        header .navlinks span{
+            color: black;
+            display: block;
+            cursor: pointer;
+            line-height: 10vh;
+            font-size: 25px;
+        }
+    }
+    
+    .home{
+        height: 100vh;
+        color: black;
+    }
+    .home img{
+        width: 100%;
+        height: 100vh;
+    }
+    .home .text{
+        position: absolute;
+        top: 35%;
+        left: 5%;
+    }
+    .home .text h1{
+        font-size: 80px;
+        font-family: serif;
+        font-weight: 400;
+    }
+    .home p{
+        margin: 20px 0;
+    }
+    .home button{
+        margin-right: 20px;
+    }
+    .owl-nav .owl-prev,
+    .owl-nav .owl-next{
+        position: absolute;
+        top: 40%;
+        height: 50px;
+        width: 50px;
+        background: rgba(0, 0, 0, 0.5) !important;
+        color: white;
+    }
+    .owl-nav .owl-prev{
+        left: 0;
+    }
+    .owl-nav .owl-next{
+        right:  0;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
+    }
+    input{
+        outline: none;
+        width: 100%;
+        border: none;
+    }
+    .book{
+        padding: 40px;
+        background: #fff;
+    }
+    .book h1{
+        font-family: serif;
+        font-size: 28px;
+    }
+    h1{
+        font-family: serif;
+    }
+    .book h1 span{
+        color: #7fc142;
+    }
+    .book input{
+        padding: 20px;
+    }
+    .book input:nth-last-child(1){
+        background: #7fc142;
+        color: white;
+    }
+    /*---------about-----------*/
+    .left, .right{
+        width: 50%;
+        padding: 30px;
+    }
+    .mtop{
+        margin-top: 40px;
+    }
+    .heading h1{
+        font-size: 100px;
+        font-weight: 500;
+        opacity: 0.1;
+        font-family: serif;
+        position: absolute;
+        top: 30px;
+    }
+    .heading h2{
+        margin: 30px 0;
+        font-size: 45px;
+        font-weight: 400;
+        font-family: serif; 
+    }
+    .about .heading h1{
+        top: 55px;
+    }
+    .about{
+        position: relative;
+    }
+    .about .left{
+        margin-top: 30px;
+    }
+    .about p{
+        font-size: 15px;
+    }
+    .about button{
+        margin: 30px 0;
+    }
+     /*---------counter-----------*/
+    .counter{
+        background-image: url("picha/8.JPEG");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 110vh;
+        width: 62%;
+        color: black;
+    }.counter .grid{
+        grid-template-columns: repeat(4,1fr);
+        text-align: center;
+        place-items: center;
+        padding-top: 40%;
+    }
+    .counter h1{
+        font-size: 50px;
+    }
+    .counter hr{
+        width: 50%;
+        margin: 10px auto;
+        background: #7fc142;
+        height: 8px;
+        border: none;
+    }
+    /*---------services-----------*/ 
+    .services{
+        position: relative;
+    }
+    .grid2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+    .services .left{
+        padding: 10px 0;
+    }
+    .services .box{
+       
+        text-align: center;
+        transition: 0.5s;
+        padding: 10px;
+    }
+    .services .box .text{
+        padding: 20px 0;
+        border:  #fff;
+    }
+    .services h3{
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10p;
+        transition: 0.5s;
+    }
+
+</style>
+<body>
+    <header>
+        <div class="content flex_space">
+            <div class="logo">
+                <span class="pic"> <img src="picha/log2.png" alt="cofee" style="margin: top 20px; margin:button 20px; width: 130px; margin: right 800px;"> </span>
+            </div>
+            <div class="navlink">
+                <ul id="menulink">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="room.html">ROOMS</a></li>
+                    <li><a href="#pages">PAGES</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li> <i class="fa fa-search"></i> </li>
+                    <li> <button class="primary-btn"> <a href="addroom.html">BOOK NOW</a>  </button></li>
+                    
+                </ul>
+                <span  class="fa fa-bars"></span>
+
+            </div>
+
+        </div>
+    </header>
+    <!-- <script>
+         var menulist=document.getElementById('menulist');
+        menulist.style.maxHeight="0px";
+
+        function menutoggle(){
+            if(menulist.style.maxHeight == "0px"){
+                menulist.style.maxHeight = "100vh"
+            }
+        } 
+    </script> -->
+    <section class="home">
+        <div class="content">
+            <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><h4>1</h4></div>  
+                </div>
+                <div class="item">
+                    <!--<div class="main">-->
+                        <img src="picha/15.jpg" alt="">
+                        <div class="text">
+                            <h1>Spend Your Holiday</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <div class="flex">
+                                <button class="primary-btn">READ MORE</button>
+                                <button class="secondary-btn">CONTACT US</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---<<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+     referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+     referrerpolicy="no-referrer"></script>-->
+
+
+    <script>
+        $('.owl-carousel') .owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
+    <section class="book">
+        <div class="container flex_space">
+            <div class="text">
+                <h1> <span>Book</span> Your Rooms</h1>
+            </div>
+            <div class="form">
+                <form class="grid" action="room.html" method="post">
+                    <input type="date" placeholder="araival date">
+                    <input type="date" placeholder="depature date">
+                    <input type="number" placeholder="adults">
+                    <input type="number" placeholder="children">
+                    <input type="submit" value="CHEK AVAILABILITY">
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <section class="book">
+        <div class="container flex">
+            <div class="left">
+                <div class="heading">
+                    <h1>WELCOME</h1>
+                    <H2>ZANZIBAR HOTEL</H2>
+
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio debitis 
+                    totam adipisci, animi harum doloremque fugiat error, ipsum esse, ullam 
+                    nostrum magnam consequatu
+                    r optio sequi quod dolorum! Velit, asperiores odit!</p>
+                <button class="primary-btn" > ABOUT US</button>
+            </div>
+            <div class="right">
+               <img src="picha/5.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="counter top">
+        <div class="container grid">
+            <div class="box">
+                <h1>2500$</h1>
+                <hr>
+                <span>customer</span>
+            </div>
+            <div class="box">
+                <h1>12500$</h1>
+                <hr>
+                <span> happy customer</span>
+            </div>
+            <div class="box">
+                <h1>1500$</h1>
+                <hr>
+                <span>Exprt technicians</span>
+            </div>
+            <div class="box">
+                <h1>1500$</h1>
+                <hr>
+                <span>Desktop reaired</span>
+            </div>
+        </div>
+    </section>
+    <section class="room">
+        <div class="container top">
+            <div class="heading" style="display: left;">
+                
+                <h2 style="display: flex;">Our Rooms</h2>
+                <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Nulla quibusdam 
+                    qui dolorum laudantium, magnam <br>debitis, incidunt voluptatum odio 
+                    reiciendis provident eligendi ducimus<br> laborum saepe earum omnis eaque harum 
+                    inventore. Aliquam.</p>
+            </div>
+            <div class=" content mtop">
+                <div class="items">
+                    <div class="image">
+                        <span class="pic"> <img src="picha/room.jpg" alt="cofee" style="margin: top 10px; margin:button 10px; width: 865px; display:flex"> </span>
+                    </div>
+                    <div class="text">
+                        <h2>Suport</h2>
+                        <div class="rate flex">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea impedit itaque, natus fugiat saepe 
+                            quam vitae amet fuga minima cum. Quos tenetur nesciunt atque repellendus quia. Cumque, placeat maxime!</p>
+                            <div class="button flex">
+                                <button class="primary-btn">BOOK NOW</button>
+                                <h3>3000$ <span> <br> Per day</span></h3>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <script>
+        $('.owl-carousel') .owlCarousel({
+            loop: true,
+            margin: 40,
+            nav: true,
+            dots: false,
+            navText:["<i class'fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2,
+                    margin: 10,
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+    <section class="services top">
+        <div class="container">
+            <div class="heading">
+                <h2>Our  Services</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui 
+                    cupiditate vitae dolorum temporibus illo dolorem veniam voluptatum dolore labore? Porro excepturi
+                     eveniet ad doloribus deserunt esse nihil ullam provident.</p>
+            </div>
+            <div class="content flex_space">
+                <div class="left grid2">
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/rest.png" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Delicius  Food</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/rest2.jpg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Fintness</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/diving.jpg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 365px;"> </span>
+                            <h3>Fish Diving</h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span class="pic"> <img src="picha/sun.jpeg" alt="cofee" style="margin: top 20px; margin:button 20px; width: 387px;"> </span>
+                            <h3>Sun set & sun rise</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" style="float:left;  margin: left 400px;">
+                    <img src="picha/service.jpg" alt="" style="margin: top 20px; margin:button 20px; width: 310px; height:675px; float:right;">
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
